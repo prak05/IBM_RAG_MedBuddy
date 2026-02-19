@@ -52,7 +52,7 @@ python-dotenv==1.0.1
 # --- Image Processing ---
 # Pillow: Python Imaging Library fork for image preprocessing before OCR
 # Source: https://pillow.readthedocs.io/
-Pillow==11.1.0
+Pillow==12.1.1
 
 # --- Utilities ---
 # Pydantic: Data validation using Python type annotations (used by FastAPI)
