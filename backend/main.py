@@ -43,7 +43,7 @@ app = FastAPI(
 # Source: https://developer.mozilla.org/en-US/docs/Web/HTTP/CORS
 app.add_middleware(
     CORSMiddleware,  # FastAPI's built-in CORS middleware
-    allow_origins=["*"],  # Allow all origins in development (restrict in production) — Source: https://fastapi.tiangolo.com/tutorial/cors/#use-corsmiddleware
+    allow_origins=settings.CORS_ORIGINS,  # Restrict to configured origins — Source: https://fastapi.tiangolo.com/tutorial/cors/#use-corsmiddleware
     allow_credentials=True,  # Allow cookies/auth headers to be sent — Source: https://developer.mozilla.org/en-US/docs/Web/HTTP/CORS#requests_with_credentials
     allow_methods=["*"],  # Allow all HTTP methods (GET, POST, PUT, DELETE, etc.)
     allow_headers=["*"],  # Allow all request headers (Authorization, Content-Type, etc.)
