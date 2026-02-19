@@ -34,7 +34,7 @@ ibm-watsonx-ai==1.5.2
 # --- Document Processing ---
 # PyPDF: Pure-python PDF text extraction library
 # Source: https://pypdf.readthedocs.io/
-pypdf==5.1.0
+pypdf==6.7.1
 
 # Markdown: Python implementation of Markdown for parsing .md files
 # Source: https://python-markdown.github.io/
