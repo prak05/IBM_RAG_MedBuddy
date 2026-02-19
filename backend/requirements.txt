@@ -14,7 +14,7 @@ uvicorn[standard]==0.34.0
 
 # Python-multipart: Required by FastAPI for file upload (multipart/form-data) support
 # Source: https://github.com/Kludex/python-multipart
-python-multipart==0.0.20
+python-multipart==0.0.22
 
 # --- HTTP Client ---
 # HTTPX: Async HTTP client for calling external APIs (HuggingFace, NCBI, IBM)
@@ -39,6 +39,10 @@ pypdf==5.1.0
 # Markdown: Python implementation of Markdown for parsing .md files
 # Source: https://python-markdown.github.io/
 Markdown==3.7
+
+# Defusedxml: Secure XML parsing library protecting against XML bomb/entity expansion attacks
+# Source: https://github.com/tiran/defusedxml
+defusedxml==0.7.1
 
 # --- Environment Management ---
 # Python-dotenv: Load environment variables from .env files

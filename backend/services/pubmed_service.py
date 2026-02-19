@@ -7,7 +7,7 @@
 # ============================================================================
 
 import httpx  # Async HTTP client for NCBI API calls — Source: https://www.python-httpx.org/
-import xml.etree.ElementTree as ET  # XML parser for PubMed API responses — Source: https://docs.python.org/3/library/xml.etree.elementtree.html
+import defusedxml.ElementTree as ET  # Secure XML parser protecting against entity expansion attacks — Source: https://github.com/tiran/defusedxml
 import asyncio  # Async sleep for rate limiting — Source: https://docs.python.org/3/library/asyncio.html
 from typing import List, Dict, Optional  # Type hints — Source: https://docs.python.org/3/library/typing.html
 from config import settings  # Centralized configuration — Source: ./config.py
