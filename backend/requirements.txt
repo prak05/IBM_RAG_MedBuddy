@@ -1,0 +1,60 @@
+# ============================================================================
+# MedBuddy v2 — Backend Dependencies
+# UST Sight 3.0 Competition Build
+# ============================================================================
+
+# --- Web Framework ---
+# FastAPI: Modern, high-performance Python web framework for building APIs
+# Source: https://fastapi.tiangolo.com/
+fastapi==0.115.6
+
+# Uvicorn: Lightning-fast ASGI server to run FastAPI
+# Source: https://www.uvicorn.org/
+uvicorn[standard]==0.34.0
+
+# Python-multipart: Required by FastAPI for file upload (multipart/form-data) support
+# Source: https://github.com/Kludex/python-multipart
+python-multipart==0.0.20
+
+# --- HTTP Client ---
+# HTTPX: Async HTTP client for calling external APIs (HuggingFace, NCBI, IBM)
+# Source: https://www.python-httpx.org/
+httpx==0.28.1
+
+# --- Database ---
+# Supabase Python client: Connects to Supabase (PostgreSQL + pgvector + Auth + Storage)
+# Source: https://supabase.com/docs/reference/python/introduction
+supabase==2.11.0
+
+# --- IBM Watsonx AI ---
+# IBM Watsonx AI SDK: Official SDK for IBM Watsonx foundation models (Granite LLM)
+# Source: https://ibm.github.io/watsonx-ai-python-sdk/
+ibm-watsonx-ai==1.5.2
+
+# --- Document Processing ---
+# PyPDF: Pure-python PDF text extraction library
+# Source: https://pypdf.readthedocs.io/
+pypdf==5.1.0
+
+# Markdown: Python implementation of Markdown for parsing .md files
+# Source: https://python-markdown.github.io/
+Markdown==3.7
+
+# --- Environment Management ---
+# Python-dotenv: Load environment variables from .env files
+# Source: https://github.com/theskumar/python-dotenv
+python-dotenv==1.0.1
+
+# --- Image Processing ---
+# Pillow: Python Imaging Library fork for image preprocessing before OCR
+# Source: https://pillow.readthedocs.io/
+Pillow==11.1.0
+
+# --- Utilities ---
+# Pydantic: Data validation using Python type annotations (used by FastAPI)
+# Source: https://docs.pydantic.dev/
+pydantic==2.10.4
+
+# SSE-Starlette: Server-Sent Events support for FastAPI streaming responses
+# Source: https://github.com/sysid/sse-starlette
+sse-starlette==2.2.1

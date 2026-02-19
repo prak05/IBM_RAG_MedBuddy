@@ -1,0 +1,43 @@
+# ============================================================================
+# render.yaml — Render Deployment Configuration for MedBuddy Backend
+# Deploys the FastAPI backend as a web service on Render.
+# Source: https://docs.render.com/blueprint-spec
+# ============================================================================
+
+services:
+  # FastAPI Backend Service
+  # Source: https://docs.render.com/web-services
+  - type: web                                    # Web service type
+    name: medbuddy-api                           # Service name on Render
+    runtime: python                              # Python runtime
+    region: oregon                               # US West region (closest to Vercel)
+    plan: free                                   # Free tier for competition
+
+    # Build configuration
+    # Source: https://docs.render.com/deploy-python
+    buildCommand: pip install -r backend/requirements.txt  # Install Python dependencies
+    startCommand: uvicorn backend.main:app --host 0.0.0.0 --port $PORT  # Start FastAPI server
+
+    # Health check endpoint
+    # Source: https://docs.render.com/web-services#health-checks
+    healthCheckPath: /api/health
+
+    # Environment variables (set these in Render dashboard)
+    # Source: https://docs.render.com/configure-environment-variables
+    envVars:
+      - key: WATSONX_API_KEY                     # IBM Watsonx API key
+        sync: false                              # Must be set manually
+      - key: WATSONX_PROJECT_ID                  # IBM Watsonx project ID
+        sync: false
+      - key: WATSONX_URL                         # IBM Watsonx endpoint URL
+        value: https://us-south.ml.cloud.ibm.com
+      - key: HF_API_TOKEN                        # HuggingFace Inference API token
+        sync: false
+      - key: SUPABASE_URL                        # Supabase project URL
+        sync: false
+      - key: SUPABASE_SERVICE_KEY                # Supabase service role key
+        sync: false
+      - key: NCBI_API_KEY                        # NCBI E-utilities API key (optional)
+        sync: false
+      - key: PYTHON_VERSION                      # Python version for Render
+        value: "3.11.0"

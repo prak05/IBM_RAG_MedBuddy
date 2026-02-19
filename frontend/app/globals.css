@@ -1,0 +1,148 @@
+/* ============================================================================
+   globals.css — Global Styles for MedBuddy v2
+   Medical-grade color scheme with Tailwind CSS base layers.
+   Source: https://tailwindcss.com/docs/adding-custom-styles#using-css-and-layer
+   ============================================================================ */
+
+/* Tailwind CSS base directives — Source: https://tailwindcss.com/docs/functions-and-directives */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Import Inter font from Google Fonts — Source: https://fonts.google.com/specimen/Inter */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap');
+
+/* ============================================================================
+   Base layer — Default HTML element styles
+   Source: https://tailwindcss.com/docs/adding-custom-styles#adding-base-styles
+   ============================================================================ */
+@layer base {
+  /* Root element: Set default font and smooth scrolling */
+  :root {
+    --background: 0 0% 100%;           /* White background for light mode */
+    --foreground: 222 47% 11%;         /* Dark text for readability */
+    --primary: 221 83% 53%;            /* Medical blue primary color */
+    --primary-foreground: 0 0% 100%;   /* White text on primary buttons */
+    --muted: 210 40% 96%;              /* Muted backgrounds for cards */
+    --muted-foreground: 215 16% 47%;   /* Muted text color */
+    --accent: 142 71% 45%;             /* Medical green accent */
+    --border: 214 32% 91%;             /* Light border color */
+    --radius: 0.75rem;                 /* Default border radius */
+  }
+
+  /* Dark mode color overrides — Source: https://tailwindcss.com/docs/dark-mode */
+  .dark {
+    --background: 222 47% 7%;          /* Very dark blue background */
+    --foreground: 210 40% 98%;         /* Light text for dark mode */
+    --primary: 217 91% 60%;            /* Brighter blue for dark mode */
+    --primary-foreground: 0 0% 100%;   /* White text on primary */
+    --muted: 217 33% 17%;              /* Dark muted backgrounds */
+    --muted-foreground: 215 20% 65%;   /* Muted text in dark mode */
+    --accent: 142 71% 45%;             /* Green stays the same */
+    --border: 217 33% 20%;             /* Darker borders */
+  }
+
+  /* Smooth rendering for all elements */
+  * {
+    border-color: hsl(var(--border)); /* Apply theme border color — Source: https://tailwindcss.com/docs/border-color */
+  }
+
+  /* Body base styles */
+  body {
+    @apply bg-white dark:bg-slate-950 text-slate-900 dark:text-slate-50; /* Theme colors */
+    font-family: 'Inter', system-ui, sans-serif; /* Medical-clean font */
+    -webkit-font-smoothing: antialiased;         /* Smooth font rendering on WebKit */
+    -moz-osx-font-smoothing: grayscale;          /* Smooth font rendering on Firefox */
+  }
+}
+
+/* ============================================================================
+   Component layer — Reusable component styles
+   Source: https://tailwindcss.com/docs/adding-custom-styles#adding-component-classes
+   ============================================================================ */
+@layer components {
+  /* Glass-morphism card effect for floating UI elements */
+  .glass-card {
+    @apply bg-white/80 dark:bg-slate-900/80 backdrop-blur-lg border border-slate-200/50 dark:border-slate-700/50 rounded-2xl shadow-lg;
+  }
+
+  /* Gradient text effect for headings — Source: https://tailwindcss.com/docs/background-clip */
+  .gradient-text {
+    @apply bg-gradient-to-r from-primary-600 via-primary-500 to-medical-500 bg-clip-text text-transparent;
+  }
+
+  /* Medical-themed button styles */
+  .btn-medical {
+    @apply inline-flex items-center justify-center px-6 py-3 bg-gradient-to-r from-primary-600 to-primary-700 text-white font-medium rounded-xl shadow-lg shadow-primary-500/25 hover:shadow-xl hover:shadow-primary-500/30 transition-all duration-200 hover:-translate-y-0.5;
+  }
+
+  /* Chat bubble styles */
+  .chat-bubble-user {
+    @apply bg-primary-600 text-white rounded-2xl rounded-br-md px-4 py-3 max-w-[80%] ml-auto;
+  }
+
+  .chat-bubble-assistant {
+    @apply bg-slate-100 dark:bg-slate-800 text-slate-900 dark:text-slate-100 rounded-2xl rounded-bl-md px-4 py-3 max-w-[80%];
+  }
+
+  /* Typing indicator animation */
+  .typing-dot {
+    @apply w-2 h-2 bg-primary-500 rounded-full animate-typing;
+  }
+
+  /* Sidebar navigation link */
+  .nav-link {
+    @apply flex items-center gap-3 px-4 py-3 text-slate-400 hover:text-white hover:bg-sidebar-hover rounded-xl transition-all duration-200;
+  }
+
+  .nav-link-active {
+    @apply flex items-center gap-3 px-4 py-3 text-white bg-primary-600/20 border border-primary-500/30 rounded-xl;
+  }
+
+  /* Confidence badge colors */
+  .confidence-high {
+    @apply bg-medical-100 text-medical-700 dark:bg-medical-900/30 dark:text-medical-400;
+  }
+
+  .confidence-medium {
+    @apply bg-amber-100 text-amber-700 dark:bg-amber-900/30 dark:text-amber-400;
+  }
+
+  .confidence-low {
+    @apply bg-red-100 text-red-700 dark:bg-red-900/30 dark:text-red-400;
+  }
+}
+
+/* ============================================================================
+   Utility layer — Custom utility classes
+   Source: https://tailwindcss.com/docs/adding-custom-styles#adding-custom-utilities
+   ============================================================================ */
+@layer utilities {
+  /* Custom scrollbar styling for chat area — Source: https://developer.mozilla.org/en-US/docs/Web/CSS/::-webkit-scrollbar */
+  .scrollbar-thin::-webkit-scrollbar {
+    width: 6px;
+  }
+
+  .scrollbar-thin::-webkit-scrollbar-track {
+    background: transparent;
+  }
+
+  .scrollbar-thin::-webkit-scrollbar-thumb {
+    background: theme('colors.slate.300');
+    border-radius: 3px;
+  }
+
+  .dark .scrollbar-thin::-webkit-scrollbar-thumb {
+    background: theme('colors.slate.700');
+  }
+
+  /* Hide scrollbar while keeping scroll functionality */
+  .scrollbar-hide::-webkit-scrollbar {
+    display: none;
+  }
+
+  .scrollbar-hide {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+}
