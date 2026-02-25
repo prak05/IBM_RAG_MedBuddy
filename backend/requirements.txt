@@ -34,7 +34,7 @@ ibm-watsonx-ai==1.5.2
 # --- Document Processing ---
 # PyPDF: Pure-python PDF text extraction library
 # Source: https://pypdf.readthedocs.io/
-pypdf==5.1.0
+pypdf==6.7.2
 
 # Markdown: Python implementation of Markdown for parsing .md files
 # Source: https://python-markdown.github.io/
@@ -52,7 +52,7 @@ python-dotenv==1.0.1
 # --- Image Processing ---
 # Pillow: Python Imaging Library fork for image preprocessing before OCR
 # Source: https://pillow.readthedocs.io/
-Pillow==11.1.0
+Pillow==12.1.1
 
 # --- Utilities ---
 # Pydantic: Data validation using Python type annotations (used by FastAPI)
