@@ -14,7 +14,7 @@ uvicorn[standard]==0.34.0
 
 # Python-multipart: Required by FastAPI for file upload (multipart/form-data) support
 # Source: https://github.com/Kludex/python-multipart
-python-multipart==0.0.22
+python-multipart==0.0.26
 
 # --- HTTP Client ---
 # HTTPX: Async HTTP client for calling external APIs (HuggingFace, NCBI, IBM)
@@ -34,7 +34,7 @@ ibm-watsonx-ai==1.5.2
 # --- Document Processing ---
 # PyPDF: Pure-python PDF text extraction library
 # Source: https://pypdf.readthedocs.io/
-pypdf==5.1.0
+pypdf==6.10.2
 
 # Markdown: Python implementation of Markdown for parsing .md files
 # Source: https://python-markdown.github.io/
@@ -47,12 +47,12 @@ defusedxml==0.7.1
 # --- Environment Management ---
 # Python-dotenv: Load environment variables from .env files
 # Source: https://github.com/theskumar/python-dotenv
-python-dotenv==1.0.1
+python-dotenv==1.2.2
 
 # --- Image Processing ---
 # Pillow: Python Imaging Library fork for image preprocessing before OCR
 # Source: https://pillow.readthedocs.io/
-Pillow==11.1.0
+Pillow==12.2.0
 
 # --- Utilities ---
 # Pydantic: Data validation using Python type annotations (used by FastAPI)
